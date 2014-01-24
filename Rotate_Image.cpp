@@ -17,7 +17,6 @@ _._._._._._._._._._._._._._._._._._._._._.*/
             for(int k = start; k < end; ++ k){
                 int cx = k, cy = i, tmp = matrix[cy][cx];
                 for(int t = 0; t < 4; ++ t){
-					cout << tmp << endl;
                     pair<int, int> p = next(cx, cy, n);
                     cx = p.first; cy = p.second;
                     int tmp1 = matrix[cy][cx];
