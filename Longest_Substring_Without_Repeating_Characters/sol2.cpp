@@ -2,29 +2,24 @@
 * File Name : Longest_Substring_Without_Repeating_Characters.cpp
 * Purpose :
 * Creation Date : 17-12-2013
-* Last Modified : Sat Jan 25 18:22:00 2014
+* Last Modified : Sat Jan 25 18:25:09 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
-bool check(string s) {
-	set<char> a;
-	for (int i = 0; i < s.length(); ++i)
-	{
-		if (a.find(s[i]) != a.end()) return false;
-		a.insert(s[i]);
-	}
-	return true;
-}
-//O(n^2) solution
+//O(n) solution
 int lengthOfLongestSubstring(string s) {
 	map<char, int> c2idx;
-	int max = 0;
-	for (int i = 0; i < s.length(); ++ i)
-	  for(int j = i+1; j < s.length(); ++ j)
-	  {
-		  int len = j-i;
-		  if(check(s.substr(i,j))&&len>max)max = len;
-	  }
+	int max = 0, start = 0, len;
+	for(int j = 0; j < s.length() + 1; ++ j){
+	  	len = j - start;
+		if(j == s.length()) break;
+	  	if(c2idx.find(s[j]) != c2idx.end()&&c2idx[s[j]] >= start){
+	  		if(len > max) max = len;
+	  		start = c2idx[s[j]] + 1;
+	  	}
+	  	c2idx[s[j]] = j;
+	}
+	if(len > max) max = len;
 	return max;
 }
 int main(int argc, const char* argv[])
