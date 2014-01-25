@@ -2,7 +2,7 @@
 * File Name : sol1.cpp
 * Purpose :
 * Creation Date : 25-01-2014
-* Last Modified : Sat Jan 25 16:47:50 2014
+* Last Modified : Sat Jan 25 16:55:43 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -26,12 +26,10 @@ int topK(int A[], int m, int B[], int n, int k){
 }
 double findMedianSortedArrays(int A[], int m, int B[], int n) {
 	int total = m+n;
-	if (total%2)
+	if (total&1) // return the \frac{total+1}{2} th number
 	  return (double)topK(A, m, B, n, (total+1)/2);
-	else
-	{
+	else // return the mean of \frac{total}{2} and \frac{total}{2}+1
 	  return (double)(topK(A, m, B, n, total/2)+topK(A, m, B, n, total/2+1))/2;
-	}
 }
 int main(int argc, const char* argv[])
 {
