@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Add_Two_Numbers.cpp
-* Purpose :
+* Purpose : refined code
 * Creation Date : 17-12-2013
-* Last Modified : Sat Jan 25 18:49:13 2014
+* Last Modified : Sat Jan 25 18:51:26 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
