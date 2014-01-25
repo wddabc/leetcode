@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Two_Sum.cpp
-* Purpose :
+* Purpose : General approach for n-sum problem. Sort first O(nlog(n)) then search from two ends O(n). Then O(nlog(n)) in total
 * Creation Date : 24-01-2014
-* Last Modified : Fri Jan 24 00:20:39 2014
+* Last Modified : Fri Jan 24 22:05:52 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"

@@ -1,8 +1,8 @@
 #/bin/bash
 # --------------------------------------- 
-# File Name : gen_folder1.sh
+# File Name : gen_folder.sh
 # Creation Date : 24-01-2014
-# Last Modified : Fri Jan 24 01:12:14 2014
+# Last Modified : Fri Jan 24 01:24:35 2014
 # Created By : wdd 
 # --------------------------------------- 
 array=($(ls | grep -v "test.cpp" | grep ".*\.cpp$"))
