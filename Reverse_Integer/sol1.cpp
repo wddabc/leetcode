@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Reverse_Integer.cpp
-* Purpose :
+* Purpose : String based approach
 * Creation Date : 17-12-2013
-* Last Modified : Tue Dec 17 13:33:10 2013
+* Last Modified : Sun Jan 26 12:29:19 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
