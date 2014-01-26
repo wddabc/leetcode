@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : ZigZag_Conversion.cpp
-* Purpose :
+* Purpose : Straight forward solution O(n^2) space, simulation
 * Creation Date : 17-12-2013
-* Last Modified : Tue Dec 17 13:31:30 2013
+* Last Modified : Sun Jan 26 11:48:49 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
