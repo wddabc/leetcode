@@ -1,51 +1,39 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Longest_Palindromic_Substring.cpp
-* Purpose :
+* Purpose : Refine code, O(n^2) time, O(1) space
 * Creation Date : 17-12-2013
-* Last Modified : Tue Dec 17 13:30:03 2013
+* Last Modified : Sat Jan 25 19:45:46 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
-pair<int, string> checkpalOdd(string s, int idx){
-    int res = 1, offset = 1;
-    while(1){
-        if(idx<offset||(idx+offset)>=s.length())break;
-        if(s[idx - offset] == s[idx + offset]){
-            offset ++;
-            res += 2;
+    int gen_pal(string s, int start, int end){
+        int res = 0;
+        while(start >= 0&&end < s.length()&&s[start] == s[end]){
+            start --;
+            end ++;
+            res ++;
         }
-        else break;
+        return res;
     }
-    return make_pair(res, s.substr(idx-offset + 1, res));
-}
-pair<int, string> checkpalEve(string s, int idx){
-    int res = 0, offset = 0;
-    while(1){
-        if(idx<offset||(idx+offset+1)>=s.length())break;
-        if(s[idx - offset] == s[idx + offset+1]){
-            offset ++;
-            res += 2;
+    string longestPalindrome(string s) {
+        int maxl = 0;
+        string res;
+        for(int i = 0; i < s.length(); ++ i){
+            int l1 = gen_pal(s, i, i);
+            if(2*l1 - 1 > maxl){
+                maxl = 2*l1 - 1;
+                res = s.substr(i-l1+1, maxl);
+            }
+            int l2 = gen_pal(s, i-1, i);
+            if(2*l2 > maxl){
+                maxl = 2*l2;
+                res = s.substr(i-l2, maxl);
+            }
         }
-        else break;
+        return res;
     }
-    return make_pair(res, s.substr(idx-offset + 1, res));
-}
-string longestPalindrome(string s) {
-    int maxlen = 0;
-    string res;
-    for(int i =0 ; i < s.length(); ++ i){
-        pair<int, string> po = checkpalOdd(s, i);
-        pair<int, string> pe = checkpalEve(s, i);
-        int tmplen = max(po.first, pe.first);
-        string sub = tmplen&0x1?po.second:pe.second;
-        if(tmplen > maxlen){
-            maxlen = tmplen;
-            res = sub;
-        }
-    }
-    return res;
-}
 int main(int argc, const char* argv[])
 {
+	cout << longestPalindrome("bb") << endl;
 	return 0;
 }
