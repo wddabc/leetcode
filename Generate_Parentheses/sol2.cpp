@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-* File Name : Generate_Parentheses.cpp
-* Purpose : DFS version
-* Creation Date : 04-01-2014
-* Last Modified : Sun Jan 26 21:01:38 2014
+* File Name : sol2.cpp
+* Purpose : iterative version, time consuming
+* Creation Date : 26-01-2014
+* Last Modified : Sun Jan 26 21:01:23 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -25,21 +25,6 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         vector<string> res;
         for(set<string>::iterator itr = res_s[n].begin(); itr != res_s[n].end(); ++ itr)
             res.push_back(*itr);
-        return res;
-    }
-    void gp(string str, int l, int r, vector<string> &v, int n){
-        if (l == n && r == n){
-            v.push_back(str);
-            return;
-        }
-        if (l < n)
-            gp(str+'(', l + 1, r, v, n);
-        if (r < l)
-            gp(str+')', l, r + 1, v, n);
-    }
-    vector<string> generateParenthesis(int n) {
-        vector<string> res;
-        gp("", 0, 0, res, n);
         return res;
     }
 int main(int argc, const char* argv[])
