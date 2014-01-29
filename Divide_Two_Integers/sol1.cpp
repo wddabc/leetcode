@@ -2,20 +2,21 @@
 * File Name : Divide_Two_Integers.cpp
 * Purpose :
 * Creation Date : 04-01-2014
-* Last Modified : Sat Jan  4 20:45:45 2014
+* Last Modified : Tue Jan 28 20:54:24 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
+// 81/7 = 11
+// 81 = 7*8 + 7*2 + 7*1 = 7<<3 + 7<<1 + 7<<0
     int divide(int dividend, int divisor) {
         long long dividend_abs = abs((long long)dividend);
         long long divisor_abs = abs((long long)divisor);
-        bool flag = (dividend^divisor)>>31;
+        bool flag = (dividend^divisor)>>31; // the highest bit of the int indicates the sign
         int res = 0;
-		cout << divisor_abs << ":"<< dividend_abs << endl;
-        while(divisor_abs < dividend_abs){
+        while(divisor_abs <= dividend_abs){
             long long ori = divisor_abs;
             int i = 1;
-            while((divisor_abs<<1) < dividend_abs){
+            while((divisor_abs<<1) <= dividend_abs){
                 divisor_abs <<= 1;
                 i <<= 1;
             }
