@@ -27,17 +27,14 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         int *next = gen_next(needle), idx = 0;
         while(*haystack != '\0'){
             bool flag = true;
-            while(*haystack == needle[idx]){
-                if(idx == nl - 1) return haystack-idx;
+            if(idx == -1 || *haystack == needle[idx]){
                 haystack ++;
                 idx ++;
-            }
-            idx = next[idx];
-            if(idx == -1) {
-                haystack ++;
-                idx ++;
-            }
+            }else
+                idx = next[idx];
+            if(idx == nl) return haystack-nl;
         }
+        delete[] next;
         return NULL;
     }
 int main(int argc, const char* argv[])
