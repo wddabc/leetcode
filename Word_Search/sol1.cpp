@@ -6,32 +6,24 @@
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
-    bool dfs(int i, int j, vector<vector<char> > &board, vector<vector<bool> > &visited, string &word, int idx){
-        if(i < 0 || i >= board.size()) return false;
-        if(j < 0 || j >= board[i].size()) return false;
-        if(visited[i][j]) return false;
-        if(board[i][j] != word[idx]) return false;
-        else {
-            if(idx == word.length() - 1) return true;
-            visited[i][j] = true;
-            if(dfs(i+1, j, board, visited, word, idx+1)) return true;
-            if(dfs(i, j+1, board, visited, word, idx+1)) return true;
-            if(dfs(i-1, j, board, visited, word, idx+1)) return true;
-            if(dfs(i, j-1, board, visited, word, idx+1)) return true;
-            visited[i][j] = false;
-        }
-        return false;
+    bool dfs(vector<vector<char> > &board, string word, int idx, vector<vector<bool> > &used, int i, int j){
+        int m = board.size(), n = board[0].size();
+        if(i < 0 || i >= m || j < 0 || j >= n || used[i][j] ||board[i][j] != word[idx]) 
+            return false;
+        if(idx == word.length()-1) return true;
+        used[i][j] = true;
+        bool res = dfs(board, word, idx + 1, used, i-1, j) || dfs(board, word, idx + 1, used, i, j-1) || dfs(board, word, idx + 1, used, i, j+1) || dfs(board, word, idx + 1, used, i+1, j);
+        used[i][j] = false;
+        return res;
     }
     bool exist(vector<vector<char> > &board, string word) {
-        vector<vector<bool> > visited;
-        for(int i = 0; i < board.size(); ++ i){
-            visited.push_back(vector<bool>());
-            for(int j = 0; j < board[i].size(); ++ j)
-                visited.back().push_back(false);
-        }
-        for(int i = 0; i < board.size(); ++ i)
-            for(int j = 0; j < board[i].size(); ++ j)
-                if(dfs(i, j, board, visited, word, 0))
+        if(word.empty()) return true;
+        if(board.empty()) return false;
+        int m = board.size(), n = board[0].size();
+        vector<vector<bool> > used(m, vector<bool>(n, false));
+        for(int i = 0; i < m; ++ i)
+            for(int j = 0; j < n; ++ j)
+                if(dfs(board, word, 0, used, i, j)) 
                     return true;
         return false;
     }

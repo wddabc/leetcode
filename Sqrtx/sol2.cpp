@@ -1,19 +1,23 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Sqrtx.cpp
-* Purpose : Newton's Method
+* Purpose : Binary Search
 * Creation Date : 08-01-2014
-* Last Modified : Sun Feb  2 02:10:01 2014
+* Last Modified : Sun Feb  2 02:17:22 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
     int sqrt(int x) {
         if (x == 0) return 0;
-        double t = 1.0, last = 0.0;
-        while(last != t){
-            last = t;
-            t = t/2+((double)x/2)/t;
+        int l = 1, r = min(x/2+1, 46340), mid;
+        while(l <= r){
+            mid = (l+r)/2;
+            if(mid*mid == x) return mid;
+            if(mid*mid > x)
+                r = mid - 1;
+            else
+                l = mid + 1;
         }
-        return (int)t;
+        return min(l,r);
     }
 int main(int argc, const char* argv[])
 {
