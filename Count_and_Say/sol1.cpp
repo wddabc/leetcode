@@ -9,16 +9,17 @@ _._._._._._._._._._._._._._._._._._._._._.*/
     string countAndSay(int n) {
         string res = "1";
         for(int i = 1; i < n; ++ i){
+            char tmp;
+            int cnt = 0;
             stringstream ss;
-            char tmp = res[0];
-            int cnt = 1;
-            for(int j = 1; j < res.length(); ++ j){
-                if(res[j] != tmp){
+            for(int j = 0; j < res.length(); ++ j){
+                if (j == 0) tmp = res[j];
+                if(res[j] == tmp) cnt ++;
+                else{
                     ss << cnt << tmp;
-                    cnt = 1;
                     tmp = res[j];
+                    cnt = 1;
                 }
-                else cnt++;
             }
             ss << cnt << tmp;
             res = ss.str();

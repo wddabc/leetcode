@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Anagrams.cpp
-* Purpose :
+* Purpose : AC on first attempt
 * Creation Date : 07-01-2014
-* Last Modified : Tue Jan  7 17:16:48 2014
+* Last Modified : Fri Jan 31 18:06:03 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -13,13 +13,13 @@ _._._._._._._._._._._._._._._._._._._._._.*/
             string s = strs[i];
             sort(s.begin(), s.end());
             map<string, int>::iterator itr = visited.find(s);
-            if(itr == visited.end())
+            if(itr == visited.end()) // new combination
                 visited[s] = i;
-            else if(itr->second != -1){
+            else if(itr->second != -1){ // combination appeared before and not recorded yet
                 res.push_back(strs[itr->second]);
                 res.push_back(strs[i]);
                 visited[s] = -1;
-            } else
+            } else // combination appeared before and recorded
                 res.push_back(strs[i]);
         }
         return res;

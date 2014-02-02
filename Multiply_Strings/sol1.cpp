@@ -2,49 +2,46 @@
 * File Name : Multiply_Strings.cpp
 * Purpose :
 * Creation Date : 06-01-2014
-* Last Modified : Mon Jan  6 16:18:52 2014
+* Last Modified : Fri Jan 31 17:02:07 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
-#include "general.h"
-    string multi_single(string num1, int num2){
-        int offset = 0, idx = num1.length() - 1;
-        string res = "";
-        while(offset > 0 || idx >= 0){
+#include "../general.h"
+    string mult_single(string num1, int num2){
+        int offset = 0, i = num1.length()-1;
+        string res;
+        while(i >= 0 || offset){
             int tmp = offset;
-            if(idx >= 0)tmp += (num1[idx] - '0')*num2;
+            if(i >= 0) tmp += (num1[i--]-'0')*num2;
             offset = tmp/10;
-            idx --;
-            char addon = '0' + tmp%10;
-            res = addon + res;
+            tmp = tmp%10+'0';
+            res = (char)tmp+ res;
         }
         return res;
     }
-    string sum_string(string num1, string num2){
-        int idx1 = num1.length() - 1, idx2 = num2.length() - 1, offset = 0;
-        string res = "";
-        while(idx1 >= 0 || idx2 >= 0 || offset > 0){
+    string sum_str(string num1, string num2){
+        int offset = 0, i1 = num1.length() - 1, i2 = num2.length() - 1;
+        string res;
+        while(i1 >= 0 || i2 >= 0 || offset){
             int tmp = offset;
-            if(idx1 >= 0) tmp += num1[idx1] - '0';
-            if(idx2 >= 0) tmp += num2[idx2] - '0';
+            if(i1 >= 0) tmp += num1[i1--] - '0';
+            if(i2 >= 0) tmp += num2[i2--] - '0';
             offset = tmp/10;
-            idx1 --;
-            idx2 --;
-            char addon = '0'+tmp%10;
-            res = addon + res;
+            tmp = tmp%10 + '0';
+            res = (char)tmp + res;
         }
         return res;
     }
     string multiply(string num1, string num2) {
-        string res;
-        for(int i = num2.length() - 1; i >= 0; -- i){
-            string tmp = multi_single(num1, num2[i] - '0');
-            for(int k = 0; k < num2.length() - 1 - i; ++ k)
+        string res = "0";
+        for(int i = num2.length()-1; i >= 0; -- i){
+            string tmp = mult_single(num1, num2[i] - '0');
+            for(int k = 0; k < num2.length()-1-i; ++ k)
                 tmp += '0';
-            res = sum_string(res, tmp);
+            res = sum_str(res, tmp);
         }
-        int non_zero = 0;
-        while(res[non_zero] == '0') non_zero++;
-        return res.substr(min(non_zero,(int)res.length()-1));
+        int s = 0;
+        while(res[s] == '0') s++;
+        return res.substr(min(s, (int)res.length()-1));
     }
 int main(int argc, const char* argv[])
 {

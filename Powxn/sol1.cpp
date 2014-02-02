@@ -2,7 +2,7 @@
 * File Name : Powxn.cpp
 * Purpose :
 * Creation Date : 07-01-2014
-* Last Modified : Tue Jan  7 18:14:12 2014
+* Last Modified : Fri Jan 31 18:46:40 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"

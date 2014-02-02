@@ -2,7 +2,7 @@
 * File Name : Text_Justification.cpp
 * Purpose :
 * Creation Date : 08-01-2014
-* Last Modified : Wed Jan  8 22:58:58 2014
+* Last Modified : Sun Feb  2 00:50:02 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -15,27 +15,31 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         vector<string> tmp_coll;
         while(idx < words.size()){
             tmps = words[idx];
-            tmpL -= words[idx].length();
+            tmpL -= words[idx].length();// tmpL is the remaining length
             int start = idx + 1, end = start;
-            while(end < words.size() && tmpL >= words[end].length() + 1) {tmpL-= (words[end].length() + 1);  end++;}
-            if(end < words.size()){
-                if(end == start){
+            while(end < words.size() && tmpL >= words[end].length() + 1) {
+				tmpL-= (words[end].length() + 1);
+				end++;
+			}//end the is idx of the last word
+            if(end < words.size()){// not the end
+                if(end == start){ // single word very long
                     for(int i = 0; i < tmpL; ++ i)
-                        tmps += ' ';
+                        tmps += ' '; // fill the rest by blank
                     res.push_back(tmps);
                 }
                 else{
                     int wc = end-start, interval = tmpL/wc + 1, offset = tmpL%wc;
-                    vector<int> inter(wc, interval);
-                    for(int i = 0; i < offset; ++ i) inter[i] ++;
+                    vector<int> inter(wc, interval); // default interval
+                    for(int i = 0; i < offset; ++ i) inter[i] ++; // add reminder
                     for(int i = 0; i < end - start; ++ i){
-                        for(int j = 0; j < inter[i]; ++ j) tmps += ' ';
+                        for(int j = 0; j < inter[i]; ++ j)
+						  tmps += ' ';
                         tmps += words[start+i];
                     }
                     res.push_back(tmps);
                 }
             }
-            else{
+            else{ // the end
                 for(int i = 0; i < end - start; ++ i)
                     tmps += (' ' + words[start+i]);
                 for(int i = 0; i < tmpL; ++ i)

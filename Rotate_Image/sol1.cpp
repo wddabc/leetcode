@@ -6,23 +6,15 @@
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
-    pair<int, int> next(int x, int y, int n){
-        return make_pair(n-1-y, x);
-    }
     void rotate(vector<vector<int> > &matrix) {
-        int n = matrix.size();
-        for(int i = 0; i <= n/2; ++ i){
-            int start = i, end = n - 1 - i;
-            if(start >=  end) break;
-            for(int k = start; k < end; ++ k){
-                int cx = k, cy = i, tmp = matrix[cy][cx];
-                for(int t = 0; t < 4; ++ t){
-                    pair<int, int> p = next(cx, cy, n);
-                    cx = p.first; cy = p.second;
-                    int tmp1 = matrix[cy][cx];
-                    matrix[cy][cx] = tmp;
-                    tmp = tmp1;
-                }
+        int m = matrix.size();
+        for(int i = 0; i < m/2; ++ i){
+            for(int j = i; j < m-i-1; ++ j){
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[m-j-1][i];
+                matrix[m-j-1][i] = matrix[m-i-1][m-j-1];
+                matrix[m-i-1][m-j-1] = matrix[j][m-i-1];
+                matrix[j][m-i-1] = tmp;
             }
         }
     }

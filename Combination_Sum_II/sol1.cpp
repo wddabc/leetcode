@@ -2,7 +2,7 @@
 * File Name : Combination_Sum_II.cpp
 * Purpose :
 * Creation Date : 06-01-2014
-* Last Modified : Mon Jan  6 11:37:08 2014
+* Last Modified : Fri Jan 31 14:56:09 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -16,7 +16,7 @@ _._._._._._._._._._._._._._._._._._._._._.*/
                 solution.push_back(num[i]);
                 dfs(collection, solution, num, i+1, target-num[i]);
                 solution.pop_back();
-                while(i + 1 < num.size() && num[i+1] == num[i]) i++;
+                while(i + 1 < num.size() && num[i+1] == num[i]) i++; // skip duplications
             }
         }
     }
