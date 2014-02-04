@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Maximal_Rectangle.cpp
-* Purpose :
+* Purpose : O(n^3) approach
 * Creation Date : 14-01-2014
-* Last Modified : Wed Jan 15 17:15:09 2014
+* Last Modified : Sun Feb  2 22:21:16 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
