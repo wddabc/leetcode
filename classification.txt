@@ -1,0 +1,155 @@
+1. Optimization:
+Two_Sum 3Sum 3Sum_Closest 4Sum
+Longest_Palindromic_Substring Valid_Palindrome Palindrome_Partitioning
+ZigZag_Conversion
+Longest_Substring_Without_Repeating_Characters
+Container_With_Most_Water
+Longest_Common_Prefix
+Remove_Duplicates_from_Sorted_Array Remove_Duplicates_from_Sorted_Array_II 
+Implement_strStr()
+Next_Permutation
+Count_and_Say
+First_Missing_Positive
+Jump_Game_II Jump_Game
+Maximum_Subarray
+Spiral_Matrix Spiral_Matrix_II
+Merge_Intervals
+Insert_Interval
+Length_of_Last_Word
+Permutation_Sequence
+Text_Justification
+Set_Matrix_Zeroes
+Sort_Colors
+Minimum_Window_Substring
+Maximal_Rectangle
+Merge_Sorted_Array
+Pascal's_Triangle Pascal's_Triangle_II
+Triangle
+Longest_Consecutive_Sequence
+Max_Points_on_a_Line
+
+2. Divide and Conquer
+Median_of_Two_Sorted_Arrays
+Search_Insert_Position
+Search_for_a_Range
+Search_in_Rotated_Sorted_Array Search_in_Rotated_Sorted_Array_II
+Search_a_2D_Matrix
+
+3.Linked List
+Add_Two_Numbers
+Remove_Nth_Node_From_End_of_List
+Swap_Nodes_in_Pairs
+Reverse_Nodes_in_k-Group
+Rotate_List
+Merge_Two_Sorted_Lists
+Remove_Duplicates_from_Sorted_List Remove_Duplicates_from_Sorted_List_II
+Partition_List 
+Reverse_Linked_List_II
+Copy_List_with_Random_Pointer
+Linked_List_Cycle Linked_List_Cycle_II
+Reorder_List
+Binary_Tree_Preorder_Traversal Binary_Tree_Postorder_Traversal
+Insertion_Sort_List
+Sort_List
+
+4. Integer Operation
+Reverse_Integer
+Integer_to_Roman Roman_to_Integer
+Multiply_Strings
+Add_Binary
+Plus_One
+
+5. DP 
+Regular_Expression_Matching
+Longest_Valid_Parentheses
+Unique_Paths Unique_Paths_II
+Minimum_Path_Sum
+Climbing_Stairs
+Edit_Distance
+Decode_Ways
+Unique_Binary_Search_Trees
+Interleaving_String
+Distinct_Subsequences
+Palindrome_Partitioning_II
+Word_Break Word_Break_II
+
+6. Recursion 
+Regular_Expression_Matching
+Letter_Combinations_of_a_Phone_Number
+*Generate_Parentheses
+Combination_Sum
+Permutations
+Permutations_II
+N-Queens_II
+N-Queens
+Combinations
+Subsets
+Word_Search
+Scramble_String
+Gray_Code
+Subsets_II
+Restore_IP_Addresses
+Unique_Binary_Search_Trees_II
+Validate_Binary_Search_Tree
+Path_Sum Path_Sum_II 
+Flatten_Binary_Tree_to_Linked_List
+Binary_Tree_Maximum_PathSum
+Sum_Root_to_Leaf_Numbers
+Surrounded_Regions
+Palindrome_Partitioning
+Clone_Graph
+Gas_Station
+Word_Break_II
+
+7.Stack
+Valid_Parentheses
+Longest_Valid_Parentheses
+Simplify_Path
+Largest_Rectangle_in_Histogram
+Evaluate_Reverse_Polish_Notation
+
+8.Queue
+Merge_k_Sorted_Lists
+Binary_Tree_Level_Order_Traversal Binary_Tree_Zigzag_Level_Order_Traversal Binary_Tree_Level_Order_Traversal_II 
+Minimum_Depth_of_Binary_Tree
+Word_Ladder Word_Ladder_II
+
+9. Approximation
+Divide_Two_Integers
+Pow(x, n)
+Sqrt(x)
+
+10. Histogram
+Trapping_Rain_Water
+Largest_Rectangle_in_Histogram
+Best_Time_to_Buy_and_Sell_Stock Best_Time_to_Buy_and_Sell_Stock_II Best_Time_to_Buy_and_Sell_Stock_III
+Candy
+
+11. String Matching
+Regular_Expression_Matching
+Valid Number
+Wildcard Matching
+
+12. Tree
+Binary_Tree_Inorder_Traversal 
+Unique_Binary_Search_Trees Unique_Binary_Search_Trees_II
+Validate_Binary_Search_Tree
+Recover_Binary_Search_Tree
+Same_Tree
+Symmetric_Tree
+Binary_Tree_Level_Order_Traversal Binary_Tree_Zigzag_Level_Order_Traversal Binary_Tree_Level_Order_Traversal_II 
+Maximum_Depth_of_Binary_Tree
+Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
+Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
+Convert_Sorted_Array_to_Binary_Search_Tree
+Balanced_Binary_Tree
+Minimum_Depth_of_Binary_Tree
+Path_Sum Path_Sum_II 
+Flatten_Binary_Tree_to_Linked_List
+Populating_Next_Right_Pointers_in_Each_Node
+Populating_Next_Right_Pointers_in_Each_Node_II
+Binary_Tree_Maximum_PathSum
+Sum_Root_to_Leaf_Numbers
+
+13. Bit operation
+Single_Number Single_Number_II

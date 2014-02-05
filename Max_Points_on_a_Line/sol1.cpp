@@ -2,7 +2,7 @@
 * File Name : Max_Points_on_a_Line.cpp
 * Purpose :
 * Creation Date : 23-01-2014
-* Last Modified : Thu Jan 23 11:58:16 2014
+* Last Modified : Wed Feb  5 17:18:35 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -16,12 +16,12 @@ _._._._._._._._._._._._._._._._._._._._._.*/
                 if(j == i) continue;
                 double xdiff = (double)points[j].x-points[i].x;
                 double ydiff = (double)points[j].y-points[i].y;
-                if(xdiff == 0 && ydiff == 0)
+                if(xdiff == 0 && ydiff == 0)// at the same location
                     same_point ++;
-                else if(xdiff == 0) 
+                else if(xdiff == 0)// the same x 
                     same_x++;
                 else 
-                    mp[ydiff/xdiff]++;
+                    mp[ydiff/xdiff]++; // throw into the map for looking up 
             }
             for(unordered_map<double, int>::iterator itr = mp.begin(); itr != mp.end(); ++ itr)
                 if(itr->second+same_point > res) res = itr->second+same_point;

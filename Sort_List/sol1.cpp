@@ -1,8 +1,8 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name : Sort_List.cpp
-* Purpose :
+* Purpose : iterative approach
 * Creation Date : 23-01-2014
-* Last Modified : Thu Jan 23 02:56:57 2014
+* Last Modified : Wed Feb  5 17:13:58 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -34,7 +34,7 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         ptr = &dummy;
         while(ptr->next) ptr = ptr->next;
         ptr->next = next_node;
-		s = dummy.next;
+		s = dummy.next; // merge the list heading start and end, return s as the new head and e as the new end
 		e = ptr;
     }
     ListNode *sortList(ListNode *head) {
@@ -47,7 +47,7 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         }
         int step = 1;
         ListNode *start = &dummy, *end = start;
-        while(step <= len){
+        while(step <= len){// from bottom up approach, 1 2 4 8 ...
             for(int i = 0; i < step && end->next; ++ i)
                 end = end->next;
 			merge(start->next, end->next, start->next, end);

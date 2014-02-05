@@ -8,19 +8,19 @@ _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
 int minCut(string s) {
         int l = s.length();
-        vector<int> dp(l+1, -1);
         vector<vector<bool> > val(l, vector<bool>(l, false));
-        for(int i = 1; i < l + 1; ++ i){
+        vector<int> dp(l+1, -1);
+        for(int i = 1; i < l+1; ++ i){
             int tmp = INT_MAX;
-            for(int j = 0; j < i; ++ j)
-                if(s[i-1] == s[j] && (i-3 < j || val[j+1][i-2])){
-                    if(dp[j] + 1 < tmp) 
-                        tmp = dp[j] + 1;
-                    val[j][i-1] = true;
+            for(int j = 1; j <= i; ++ j)
+                if(s[i-1] == s[j-1] && (i < j+3 || val[j][i-2])){
+                    if(dp[j-1] + 1 < tmp)
+                        tmp = dp[j-1]+1;
+                    val[j-1][i-1] = true;
                 }
             dp[i] = tmp;
         }
-        return dp[l];    
+        return dp[l];
     }
 int main(int argc, const char* argv[])
 {
