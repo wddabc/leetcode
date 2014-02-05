@@ -8,16 +8,13 @@ _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
     vector<int> getRow(int rowIndex) {
         vector<int> res(1,1);
-        if(!rowIndex) return res;
         for(int i = 0; i < rowIndex; ++ i){
-            vector<int> tmp;
-            int prev = 0;
+            int prev = 0, last = res.back();
             for(int j = 0; j < res.size(); ++ j){
-                tmp.push_back(res[j] + prev);
-                prev = res[j];
+                res[j] += prev;
+                prev = res[j]-prev;
             }
-            tmp.push_back(res.back());
-            res = tmp;
+            res.push_back(last);
         }
         return res;
     }

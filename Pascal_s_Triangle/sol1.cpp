@@ -2,7 +2,7 @@
 * File Name : Pascal_s_Triangle.cpp
 * Purpose :
 * Creation Date : 19-01-2014
-* Last Modified : Sun Jan 19 23:26:23 2014
+* Last Modified : Tue Feb  4 22:47:40 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -13,12 +13,12 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         for(int i = 1; i < numRows; ++ i){
             vector<int> &prev_row = res.back();
             vector<int> new_row;
-            int prev = 0;
+            int prev = 0; // push the first element
             for(int j = 0; j < prev_row.size(); ++ j){
                 new_row.push_back(prev_row[j] + prev);
                 prev = prev_row[j];
             }
-            new_row.push_back(prev_row.back());
+            new_row.push_back(prev_row.back());// push the last element
             res.push_back(new_row);
         }
         return res;

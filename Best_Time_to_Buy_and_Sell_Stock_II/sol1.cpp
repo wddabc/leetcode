@@ -7,14 +7,10 @@
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
     int maxProfit(vector<int> &prices) {
-        int tt = 0, min_price = INT_MAX;
-        prices.push_back(0);
-        for(int i = 0; i < prices.size()-1; ++ i){
-            if(prices[i] < min_price) min_price = prices[i];
-            if(prices[i] > min_price && prices[i+1] < prices[i]){
-                tt += prices[i]-min_price;
-                min_price = INT_MAX;
-            }
+        int tt = 0;
+        for(int i = 1; i < prices.size(); ++ i){
+            if(prices[i] > prices[i-1])
+                tt += (prices[i] - prices[i-1]);
         }
         return tt;
     }

@@ -8,20 +8,18 @@ _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
     void connect(TreeLinkNode *root) {
         if(!root) return;
-        root->next = NULL;
-        TreeLinkNode *ptr = root, *next_level = root;
+        TreeLinkNode *ptr = root, *prev, *next;
         while(ptr->left){
-            next_level = ptr->left;
-            TreeLinkNode *prev = NULL;
+            next = ptr->left;
+            prev = NULL;
             while(ptr){
                 if(prev)
-                    prev->right->next = ptr->left;
+                    prev->next = ptr->left;
                 ptr->left->next = ptr->right;
-                prev = ptr;
+                prev = ptr->right;
                 ptr = ptr->next;
             }
-            prev->right->next = NULL;
-            ptr = next_level;
+            ptr = next;
         }
     }
 int main(int argc, const char* argv[])

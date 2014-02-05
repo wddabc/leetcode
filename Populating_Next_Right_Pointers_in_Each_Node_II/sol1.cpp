@@ -8,7 +8,6 @@ _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
     void connect(TreeLinkNode *root) {
         if(!root) return;
-        root->next = NULL;
         TreeLinkNode *ptr = root, *new_level = root;
         while(ptr){
             new_level = NULL;
@@ -29,7 +28,6 @@ _._._._._._._._._._._._._._._._._._._._._.*/
                 ptr = ptr->next;
             }
             if(!prev) break;
-            prev->next = NULL;
             ptr = new_level;
         }
     }
