@@ -2,28 +2,15 @@
 * File Name : Symmetric_Tree.cpp
 * Purpose :
 * Creation Date : 19-01-2014
-* Last Modified : Tue Feb  4 17:26:29 2014
+* Last Modified : Sun Jan 19 01:22:11 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
-    bool isSymmetricItr(TreeNode *left, TreeNode *right){
-        queue<TreeNode*> ql, qr;
-        ql.push(left);
-        qr.push(right);
-        while(ql.size()&&qr.size()){
-            TreeNode *l = ql.front(), *r = qr.front();
-            ql.pop();
-            qr.pop();
-            if(!l&&!r) continue;
-            if((!l&&r)||(l&&!r)||(l->val != r->val)) return false;
-            if(l&&r){
-                ql.push(l->left);
-                ql.push(l->right);
-                qr.push(r->right);
-                qr.push(r->left);
-            }
-        }
-        return !ql.size()&&!qr.size();
+    bool isSymmetric(TreeNode *left, TreeNode *right){
+        if(!left&&!right) return true;
+        if(!(left&&right)) return false;
+        if(left->val != right->val) return false;
+        return isSymmetric(left->left, right->right)&&isSymmetric(left->right, right->left);
     }
     bool isSymmetric(TreeNode *root) {
         if(!root) return true;
