@@ -2,7 +2,7 @@
 * File Name : Word_Ladder_II.cpp
 * Purpose :
 * Creation Date : 20-01-2014
-* Last Modified : Mon Jan 20 20:52:21 2014
+* Last Modified : Wed Feb  5 00:17:22 2014
 * Created By : wdd 
 _._._._._._._._._._._._._._._._._._._._._.*/
 #include "general.h"
@@ -13,9 +13,9 @@ _._._._._._._._._._._._._._._._._._._._._.*/
         vector<string> &ance = cur_p.second;
         vector<vector<string> > res;
         for(int i = 0; i < ance.size(); ++ i){
-            vector<vector<string> > ance_path = gen_path(ance[i], paths);
+            vector<vector<string> > ance_path = gen_path(ance[i], paths);// get path from the father
             for(int j = 0; j< ance_path.size(); ++ j)
-                ance_path[j].push_back(end);
+                ance_path[j].push_back(end);// append the end to the path
             res.insert(res.end(), ance_path.begin(), ance_path.end());
         }
         return res;
@@ -42,10 +42,10 @@ _._._._._._._._._._._._._._._._._._._._._.*/
                     if(dict.find(new_cand) != dict.end()){
                         unordered_map<string, pair<int, vector<string> > >::iterator itr = paths.find(new_cand);
                         if(itr == paths.end()){
-                            paths[new_cand] = make_pair(step + 1, vector<string>(1, cur));
+                            paths[new_cand] = make_pair(step + 1, vector<string>(1, cur)); // build path
                             que.push(new_cand);
                         }
-                        else if(itr->second.first == (step + 1))
+                        else if(itr->second.first == (step + 1)) // add cur as a father of new_cand
                             itr->second.second.push_back(cur);
                     }
                 }
