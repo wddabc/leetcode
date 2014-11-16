@@ -17,5 +17,4 @@
 #include<cmath>
 #include <sys/stat.h>
 using namespace std;
-#include "macro.h"
 #endif
