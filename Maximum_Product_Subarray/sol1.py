@@ -24,8 +24,6 @@ class Solution:
                         dp_min[i] = dp_max[i-1]*val
                     if dp_min[i-1] < 0:
                         dp_max[i] = dp_min[i-1]*val
-            print "dp_max" + str(i) + ":" + str(dp_max[i])
-            print "dp_min" + str(i) + ":" + str(dp_min[i])
             if dp_max[i] > res_max:
                 res_max = dp_max[i]
         return res_max
